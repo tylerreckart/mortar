@@ -1,0 +1,11 @@
+include ../mixins/time.pug
+div.next-post--wrapper
+  article.next-post--content
+    div.next-post--header
+      a(href!="/" + nextPost.path)
+        h2=nextPost.attributes.title
+      +time(nextPost.attributes.date)
+    div.next-post--body
+      | !{nextPost.body}
+      a(href!="/" + nextPost.path) Continue Reading →
+    include footer.pug
